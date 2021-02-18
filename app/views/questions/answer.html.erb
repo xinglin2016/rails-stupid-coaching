@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Stupied Coaching</title>
-<!--     <%= csrf_meta_tags %>
+<h1>Stupied Coaching</h1>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %> -->
-    <link rel="stylesheet" href="style.css">
-  </head>
+<blockquote>
+  <p>
+    <% if @question.blank? %>
+      😶
+    <% else %>
+      <%= @question %>
+    <% end %>
+  </p>
+  <cite>You</cite>
+</blockquote>
 
-  <body>
-    <h1>Stupied Coaching</h1>
-      <h1><%= params[:question] %></h1>
-      <h1>-You</h1>
+<blockquote class="coach">
+  <p><%= @answer %></p>
+  <cite>Your coach</cite>
+</blockquote>
 
-      <h1><%= @answer %></h1>
-      <h1>-Your coach</h1>
-
-
-<!--     <p>A very simple footer</p> -->
-    <%= link_to "Ask a new question", ask_path %>
-  </body>
-</html>
+<%= link_to "Ask a new question", ask_path %>
